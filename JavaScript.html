@@ -1,0 +1,97 @@
+<html>
+<head>
+<body background="Images/bkgnd3.gif">
+<font color="blue" face="Candal" size="5">
+<script language="javaScript">
+
+function guessing ()
+{
+	/* block comment
+		Write and algorithm to create a guessing game.
+		Let the user know if the guess is to high or too low.
+		If they guess the number, alert this fact and tell them how many guesses it took them to guess the number.
+		
+		1.Generate a random number  and set the number of guesses to 0.
+		2.Prompt the user to enter a guess
+		3.Than check the users guess with the orginal generated number and if low prompt use it is to low. If to high prompt user it is to high. If correct prompt user they got it and how manny guesses it took them to get the random generated number.
+		4. Loop while guess does NOT equal the number.
+		(rand != usersguess) // == tests equality != tests if rand doens NOT EQUAL uG
+	*/
+	var usersGuess = -1;
+	var numOfguesses = 0; // camel case
+	var rand = Math.random()*10
+	rand = rand + 1;
+	rand = parseInt(rand);
+	alert(rand);	
+	
+	usersGuess = prompt("Guess a number from 1-10")
+	numOfguesses++
+	
+	// = --> assignment open
+	// == --> tests for equality
+	// != --> test NOT equals
+	
+	while( usersGuess != rand ) // Loop while the users answer is wrong.
+	{
+		
+		if ( usersGuess < rand ) // test if guess is to low.
+		{	
+			alert("Guess is to low.")// with an alert. tell the user the guess is to low.
+		}		
+		else if(usersGuess>rand)
+		{
+			alert("Guess is to high.")
+		
+		}
+		//prompt the user to enter a new number
+		usersGuess = prompt("Enter new number 1-10.");
+		numOfguesses++
+	}// User guess is correct	
+	alert("Correct! You guessed correctly in "+numOfguesses+" guess(es)")
+}
+
+function greeting1 ()
+{
+	alert("Hello there.")// "Hello there" is a parameter.
+
+}// end of greeting1()
+
+function greeting2 ()
+{
+	// = is the assignment operator.
+	//assignment stores whats on the right side into the element on the left.
+	var name = prompt("Type your name")// "Type your name" is a parameter.
+	alert("Greetings, " + name);
+}// end of greeting2()
+
+function greeting3 ()
+{
+	var answer = confirm("Do you want to play again?"); 
+	alert(answer);
+	
+}// end of greeting3()
+
+</script>
+
+</head>
+ 
+<h1> My first JavaScript Page</h1>
+
+Click here <a href="index.html"> return to my home page.</a><br/><br/>
+
+<input type="button" value="Play My Guessing Game" onclick="guessing()"/><br/>
+
+<br/><br/><br/>
+
+<hr/>
+<input type="button" value="Click me" onclick="greeting1()"/><br/>
+
+<hr/>
+<input type="button" value="Click to enter a name" onclick="greeting2()"/><br/>
+
+<hr/>
+<input type="button" value="Click just one more time" onclick="greeting3()"/><br/>
+
+</font>
+</body>
+</html>
